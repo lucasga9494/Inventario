@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulario de Facturaci&oacute;n</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4 ;
+    }
+    h2{
+        text-align: center;
+        margin-top: 20px;
+    
+    }
+    form{
+        background-origin: #fff;
+        max-width: 500px;
+        margin:20px auto;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    label{
+        display:block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="date"],
+    input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    
+    }
+    input[type="submit"]:hover{
+        text-decoration: #ccc;
+        color: #090f08;
+        background-color: rgb(236, 231, 231);
+
+    
+}
+</style>
+
+
+
+
+<body>
+    <h2>Formulario de Facturaci&oacuten</h2>
+    <form method="post" action="procesar_formulario.php">
+        <!-- Datos de la factura -->
+        <label for="numero_factura">N&uacute;mero de factura:</label>
+        <input type="text" name="numero_factura" id="numero_factura" required>
+        <br>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" id="fecha" required>
+        <br>
+
+        <label for="cliente">Cliente:</label>
+        <input type="text" name="cliente" id="cliente" required>
+        <br>
+
+        <!-- Detalles del producto -->
+        <h3>Detalles del Producto:</h3>
+        <label for="nombre_producto">Nombre del producto:</label>
+        <input type="text" name="nombre_producto" id="nombre_producto" required>
+        <br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" name="precio" id="precio" step="0.01" required>
+        <br>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" name="cantidad" id="cantidad" required>
+        <br>
+
+        <input type="submit" value="Guardar Factura">
+    </form>
+</body>
+
+</html>
