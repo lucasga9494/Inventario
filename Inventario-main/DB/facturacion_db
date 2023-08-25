@@ -1,0 +1,27 @@
+CREATE DATABASE facturacion_db;
+
+USE facturacion_db;
+
+CREATE TABLE facturas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    numero_factura VARCHAR(255),
+    fecha DATE,
+    cliente VARCHAR(255),
+    precio DECIMAL(10, 2)
+);
+
+CREATE TABLE productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255),
+    precio DECIMAL(10, 2)
+);
+
+CREATE TABLE items_factura (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    factura_id INT,
+    producto_id INT,
+    cantidad INT,
+    subtotal DECIMAL(10, 2),
+    FOREIGN KEY (factura_id) REFERENCES facturas(id),
+    FOREIGN KEY (producto_id) REFERENCES productos(id)
+);
